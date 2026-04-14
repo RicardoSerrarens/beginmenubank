@@ -2,7 +2,7 @@ banksaldo=0
 transactions=[]
 while True:
     print("Welkom bij SparenVoorIedereen!")
-    print("Je banksaldo is: ", banksaldo)
+    print(f"Je banksaldo is: €{banksaldo:.2f}")
     print("Wat wil je doen?")
     print("1. Geld storten")
     print("2. Geld opnemen")
@@ -14,8 +14,8 @@ while True:
     if keuze == "1":
         bedrag = float(input("Hoeveel geld wil je storten? "))
         banksaldo += bedrag
-        transactions.append(f"Gestort: +{bedrag}")
-        print(f"Je hebt {bedrag} gestort. Je nieuwe banksaldo is {banksaldo}.")
+        transactions.append(f"Gestort: +€{bedrag:.2f}")
+        print(f"Je hebt €{bedrag:.2f} gestort. Je nieuwe banksaldo is €{banksaldo:.2f}.")
         
     elif keuze == "2":
         bedrag = float(input("Hoeveel geld wil je opnemen? "))
@@ -23,8 +23,8 @@ while True:
             print("Onvoldoende saldo.")
         else:
             banksaldo -= bedrag
-            transactions.append(f"Opgenomen: -{bedrag}")
-            print(f"Je hebt {bedrag} opgenomen. Je nieuwe banksaldo is {banksaldo}.")
+            transactions.append(f"Opgenomen: -€{bedrag:.2f}")
+            print(f"Je hebt €{bedrag:.2f} opgenomen. Je nieuwe banksaldo is €{banksaldo:.2f}.")
             
     elif keuze == "3":
         print("\n--- Transactie Geschiedenis ---")
